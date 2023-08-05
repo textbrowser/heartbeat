@@ -27,7 +27,7 @@ while
     git add data 2>/dev/null
     git commit -m "New data ($ip_address)!" data
     git push https://${GIT_A}:${GIT_T}@github.com/textbrowser/heartbeat
-    sleep 60
+    sleep 300
 do true; done
 
 exit 0
