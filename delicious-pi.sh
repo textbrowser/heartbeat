@@ -14,12 +14,12 @@ then
 fi
 
 while
+    ip_address=$(hostname -I | head -1 | tr --delete " \n")
     mkdir -p data
-    set ip_address=$(hostname -I | head -1 | tr --delete " \n")
     echo $(date '+%Y-%m-%d:%H:%M:%S:%N'; vcgencmd measure_temp) > \
-	 data/pi-temperature-$hostname.txt
+	 data/pi-temperature-$ip_address.txt
     git add data 2>/dev/null
-    git commit -m "New data ($hostname)!" data
+    git commit -m "New data ($ip_address)!" data
     git push https://${GIT_A}:${GIT_T}@github.com/textbrowser/heartbeat
     sleep 60
 do true; done
