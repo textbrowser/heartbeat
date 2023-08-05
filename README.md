@@ -2,6 +2,6 @@
 Periodically send GitHub important information.
 
 ```
-> export GIT-A Account
-> export GIT-T Token
+> export GIT_A Account
+> export GIT_T Token
 ```
