@@ -16,10 +16,12 @@ fi
 while
     ip_address=$(hostname -I | head -1 | tr --delete " \n")
     mkdir -p data
-    echo $(date '+%Y-%m-%d:%H:%M:%S:%N'; netstat -i) > \
+    echo $(date '+%Y-%m-%d:%H:%M:%S:%N') > \
          data/pi-netstat-$ip_address.txt
-    echo $(date '+%Y-%m-%d:%H:%M:%S:%N'; uptime) > \
+    netstat -i >> data/pi-netstat-$ip_address.txt
+    echo $(date '+%Y-%m-%d:%H:%M:%S:%N') > \
          data/pi-uptime-$ip_address.txt
+    uptime >> data/pi-uptime-$ip_address.txt
     echo $(date '+%Y-%m-%d:%H:%M:%S:%N'; vcgencmd measure_temp) > \
 	 data/pi-temperature-$ip_address.txt
     git add data 2>/dev/null
