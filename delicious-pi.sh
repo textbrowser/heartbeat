@@ -24,6 +24,7 @@ while
     uptime >> data/pi-uptime-$ip_address.txt
     echo $(date '+%Y-%m-%d:%H:%M:%S:%N'; vcgencmd measure_temp) > \
 	 data/pi-temperature-$ip_address.txt
+    git pull
     git add data 2>/dev/null
     git commit -m "New data ($ip_address)!" data
     git push https://${GIT_A}:${GIT_T}@github.com/textbrowser/heartbeat
