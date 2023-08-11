@@ -15,6 +15,12 @@ fi
 
 while
     ip_address=$(hostname -I | head -1 | tr --delete " \n")
+
+    if [ -z "$ip_address" ];
+    then
+	ip_address="127.0.0.1"
+    fi
+
     mkdir -p data
     echo $(date '+%Y-%m-%d:%H:%M:%S:%N') > \
          data/pi-netstat-$ip_address.txt
