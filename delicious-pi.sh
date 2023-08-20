@@ -14,7 +14,7 @@ then
 fi
 
 while
-    ip_address=$(hostname -I | head -1 | tr --delete " \n")
+    ip_address=$(hostname -I | awk '{print $1}' | tr --delete " \n")
 
     if [ -z "$ip_address" ];
     then
