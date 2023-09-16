@@ -1,6 +1,6 @@
-2023-09-16:13:17:55:406845818
+2023-09-16:14:13:13:645356034
 Kernel Interface table
 Iface             MTU    RX-OK RX-ERR RX-DRP RX-OVR    TX-OK TX-ERR TX-DRP TX-OVR Flg
 eth0             1500        0      0      0 0             0      0      0      0 BMU
-lo              65536     1025      0      0 0          1025      0      0      0 LRU
-wlan0            1500  1280164      0      0 0        389068      0      0      0 BMU
+lo              65536     1026      0      0 0          1026      0      0      0 LRU
+wlan0            1500  1283236      0      0 0        389793      0      0      0 BMU
