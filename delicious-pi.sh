@@ -22,8 +22,8 @@ while
     fi
 
     mkdir -p data 2>/dev/null
-    echo $(date '+%Y-%m-%d:%H:%M:%S:%N') > data/pi-netstat-$ip_address.txt
-    netstat -i >> data/pi-netstat-$ip_address.txt
+    echo $(date '+%Y-%m-%d:%H:%M:%S:%N') > data/pi-ip-$ip_address.txt
+    ip -s lin >> data/pi-ip-$ip_address.txt
     echo $(date '+%Y-%m-%d:%H:%M:%S:%N') > data/pi-uptime-$ip_address.txt
     uptime >> data/pi-uptime-$ip_address.txt
     echo $(date '+%Y-%m-%d:%H:%M:%S:%N'; vcgencmd measure_temp) > \
